@@ -9,7 +9,7 @@ Usage
 
     # Ruby buildpack
     $ cat .buildpacks
-    https://github.com/issueapp/heroku-buildpack-ffmpeg
+    https://github.com/laddhadhiraj/heroku-buildpack-ffmpeg
     https://github.com/heroku/heroku-buildpack-ruby
 
     # for new project
