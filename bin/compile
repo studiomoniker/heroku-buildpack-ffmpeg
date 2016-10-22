@@ -54,11 +54,6 @@ if [ ! -f "$CACHE_DIR/$FFMPEG_FILE" ]; then
   #TODO sha256sum $CACHE_DIR/$FFMPEG_FILE
 fi
 
-# $extract $CACHE_DIR/$FFMPEG_FILE *ffmpeg
-# $extract $CACHE_DIR/$FFMPEG_FILE *ffmpeg-10bit
-# $extract $CACHE_DIR/$FFMPEG_FILE *ffprobe
-# $extract $CACHE_DIR/$FFMPEG_FILE *ffserver
-# $extract $CACHE_DIR/$FFMPEG_FILE *qt-faststart
 
 $extract $CACHE_DIR/$FFMPEG_FILE 
 
