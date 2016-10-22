@@ -53,6 +53,10 @@ if [ ! -f "$CACHE_DIR/$FFMPEG_FILE" ]; then
 fi
 
 $extract $CACHE_DIR/$FFMPEG_FILE *ffmpeg
+$extract $CACHE_DIR/$FFMPEG_FILE *ffmpeg-10bit
+$extract $CACHE_DIR/$FFMPEG_FILE *ffprobe
+$extract $CACHE_DIR/$FFMPEG_FILE *ffserver
+$extract $CACHE_DIR/$FFMPEG_FILE *qt-faststart
 
 echo "exporting PATH" | indent
 echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH
