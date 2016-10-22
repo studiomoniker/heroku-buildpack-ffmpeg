@@ -9,6 +9,13 @@ CACHE_DIR=$2
 ENV_DIR=$3
 VENDOR_BIN_DIR="$BUILD_DIR/vendor/bin"
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
+
+PROFILE_PATH1="$BUILD_DIR/.profile.d/ffmpeg-10bit.sh"
+PROFILE_PATH2="$BUILD_DIR/.profile.d/ffprobe.sh"
+PROFILE_PATH3="$BUILD_DIR/.profile.d/ffserver.sh"
+PROFILE_PATH4="$BUILD_DIR/.profile.d/qt-faststart.sh"
+
+
 FFMPEG_BIN_URL="http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz"
 if [ -f "$ENV_DIR/FFMPEG_BIN_URL" ]; then
   FFMPEG_BIN_URL=$(cat $ENV_DIR/FFMPEG_BIN_URL)
@@ -34,6 +41,11 @@ echo "-----> Installing ffmpeg..."
 $mkdir $VENDOR_BIN_DIR
 $mkdir ${PROFILE_PATH%/*}
 
+$mkdir ${PROFILE_PATH1%/*}
+$mkdir ${PROFILE_PATH2%/*}
+$mkdir ${PROFILE_PATH3%/*}
+$mkdir ${PROFILE_PATH4%/*}
+
 if [ ! -f "$CACHE_DIR/$FFMPEG_FILE" ]; then
   echo "downloading ffmpeg: $FFMPEG_BIN_URL" | indent
   $download $CACHE_DIR/$FFMPEG_FILE $FFMPEG_BIN_URL
@@ -44,3 +56,8 @@ $extract $CACHE_DIR/$FFMPEG_FILE *ffmpeg
 
 echo "exporting PATH" | indent
 echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH
+
+echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH1
+echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH2
+echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH3
+echo 'export PATH="$PATH:$HOME/vendor/bin"' >> $PROFILE_PATH4
